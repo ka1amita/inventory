@@ -1,0 +1,25 @@
+      <tr  >
+        <td >Title</td>
+        <td><i  class="fa-solid fa-exclamation urgent"></i></td>
+        <td><i  class="fa-solid fa-check done"></i></td>
+        <td >Due Date</td>
+        <td >Creation Date</td>
+        <td><a  
+                
+               >Assignee</a></td>
+        <td>
+          <a  >
+            <button class="detail-button">Detail</button>
+          </a>
+        </td>
+        <td>
+          <a  >
+            <button class="delete-button" >Delete</button>
+          </a>
+        </td>
+        <td>
+          <a  >
+            <button class="edit-button">Edit</button>
+          </a>
+        </td>
+      </tr>

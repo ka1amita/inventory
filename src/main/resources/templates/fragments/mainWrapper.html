@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/styles.css" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/solid.css" th:href="@{/css/solid.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/fontawesome.css" th:href="@{/css/fontawesome.css}">
+  <title th:text="${title}">Head</title>
+</head>
+<body>
+<header th:fragment="header" class="main-header">
+  <nav th:fragment="nav" class="main-navigation">
+    <a href="../addTodo.html" th:href="@{/todo/add}">Add New Todo</a>
+    <a href="../listTodo.html" th:href="@{/todo/list}">List of Todos</a>
+    <a href="../listAssignee.html" th:href="@{/assignee/}">List of Assignees</a>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <!--/* Content */-->
+  </div>
+</main>
+<footer th:fragment="footer" class="main-footer">
+  <div th:fragment="statusbar" class="main-statusbar">
+    <p th:if="error" th:text="${error}" class="error-text statusbar-text">Default error message Default error message Default error message Default error message Default error message Default error message</p>
+    <p th:if="message" th:text="${message}" class="message-text statusbar-text">Default backend message</p>
+  </div>
+</footer>
+</body>
+</html>

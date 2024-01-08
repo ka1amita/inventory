@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/styles.css" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/solid.css" th:href="@{/css/solid.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/fontawesome.css" th:href="@{/css/fontawesome.css}">
+  <title>Footer</title>
+</head>
+<body>
+<footer th:fragment="footer" class="main-footer">
+  <div th:if="${error} or ${message}" th:fragment="statusbar" class="main-statusbar">
+    <p th:if="${error}" th:text="${error}" class="error-text statusbar-text">Default error message Default error message Default error message Default error message Default error message Default error message</p>
+    <p th:if="${message}" th:text="${message}" class="message-text statusbar-text">Default backend message</p>
+  </div>
+</footer>
+</body>
+</html>

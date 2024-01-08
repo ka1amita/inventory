@@ -1,0 +1,305 @@
+/* LAYOUT start */
+
+* {
+  box-sizing: border-box;
+}
+
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding-top: 100px; /* This should be at least the height of the header */
+  padding-bottom: 100px; /* This should be at least the height of the header */
+}
+
+.main-footer,
+.main-header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+}
+
+.main-header {
+  top: 0;
+}
+
+.main-footer {
+  bottom: 0;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.main-statusbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.list,
+.search-container {
+  width: 90%;
+}
+
+/* LAYOUT end*/
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.edit-form,
+.list,
+.search-container,
+.detail-container,
+.container {
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+}
+
+.main-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-footer {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  background: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.list-container {
+  padding: 1rem;
+}
+
+.list {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.25rem 0.25rem;
+}
+
+input[type=reset],
+input[type=reset],
+input[type=reset],
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button {
+  background-color: black;
+  color: white;
+}
+
+.edit-button {
+  background-color: indianred;
+}
+
+input[type=reset].cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+input[type=reset]:hover,
+button:hover {
+  opacity: 80%;
+}
+
+input[type=reset]:active,
+button:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.search-input {
+  height: 35px;
+}
+
+.form-input {
+  width: 100%;
+}
+
+
+.search-form {
+  margin-bottom: 1rem;
+}
+
+.search-form:last-of-type {
+  margin-bottom: 0;
+}
+
+th {
+  background-color: #f7f7f7;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+td:first-child {
+  padding-left: 1rem;
+}
+
+td:last-child {
+  padding-right: 1rem;
+}
+
+.urgent {
+  color: red;
+}
+
+.done {
+  color: green;
+}
+
+.main-footer {
+  background-color: white;
+}
+
+.main-navigation {
+  text-align: center;
+  /*list-style: none;*/
+  margin: 0;
+  padding: 1rem;
+}
+
+.main-navigation a {
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.5s, color 0.2s;
+}
+
+.main-navigation a:hover {
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+.description {
+  margin-top: 1rem;
+  padding: 1rem;
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+h1 i {
+  margin-left: 0.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+.detail-container,
+.edit-form {
+  padding: 1rem;
+  max-width: 50%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group.checkbox-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-group.checkbox-group input {
+  margin: 0 0.5rem;
+}
+
+.form-group.checkbox-group label {
+  margin: 0;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-statusbar {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+p.error-text {
+  color: red;
+}
+
+p.message-text {
+  color: green;
+}
+
+.statusbar-text {
+  margin-bottom: 0.5rem;
+}
+
+.statusbar-text:last-of-type {
+  margin-bottom: 0;
+}

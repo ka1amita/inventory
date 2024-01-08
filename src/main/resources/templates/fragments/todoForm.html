@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/styles.css" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/solid.css" th:href="@{/css/solid.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/fontawesome.css" th:href="@{/css/fontawesome.css}">
+  <title>Todo Form</title>
+</head>
+<body>
+<main>
+  <div class="container">
+    <h1>Todo Form</h1>
+    <form th:action="@{/todo/{id}/edit(id=*{id})}" th:object="${todo}" th:method="post" class="edit-form" th:fragment="todo-form">
+      <div class="form-group">
+        <label for="todo-title">Title</label>
+        <input type="text" th:field="*{title}" id="todo-title" class="form-input input">
+      </div>
+      <div class="form-group checkbox-group">
+        <label for="todo-urgent"> <input type="checkbox" th:field="*{urgent}" id="todo-urgent">Urgent</label>
+        <label for="todo-done"> <input type="checkbox" th:field="*{done}" id="todo-done">Done</label>
+      </div>
+      <div class="form-group">
+        <label for="assignee-name">Assignee's Name</label>
+        <select id="assignee-name" th:field="${todo.assignee.id}" class="form-input input">
+          <option value="0" disabled>Choose assignee...</option>
+          <option th:each="assignee : ${assignees}" th:object="${assignee}"
+                  th:value="*{id}"
+                  th:text="*{name}">
+            Assignee's name
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="todo-due-date">Due Date</label>
+        <input type="date" id="todo-due-date" th:field="*{dueDate}" class="form-input input">
+      </div>
+      <div class="form-group">
+        <label for="todo-creation-date">Creation Date</label>
+        <input type="date" id="todo-creation-date" th:field="*{creationDate}" class="form-input input">
+      </div>
+      <div class="form-group">
+        <label for="todo-description">Description</label>
+        <input type="text" id="todo-description" th:field="*{description}" class="form-input input">
+      </div>
+      <div class="form-group form-buttons">
+        <button type="submit" class="">Save Changes</button>
+        <input class="cancel-button" type="reset">
+      </div>
+    </form>
+  </div>
+</main>
+</body>
+</html>
