@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/styles.css" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/solid.css" th:href="@{/css/solid.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../../static/css/fontawesome.css" th:href="@{/css/fontawesome.css}">
+  <title>Borrower Form</title>
+</head>
+<body>
+<main>
+  <div class="container">
+    <h1>Borrower Form</h1>
+    <form action="../listBorrowers.html" th:action="@{/borrower/add}" th:object="${borrower}" th:method="post" class="edit-form" th:fragment="borrower-form">
+      <input type="hidden" th:field="*{id}">
+      <div class="form-group">
+        <label for="borrower-name">Name</label>
+        <input type="text" th:field="*{name}" id="borrower-name" class="form-input input">
+      </div>
+      <div class="form-group">
+        <label for="borrower-email">E-mail</label>
+        <input type="text" th:field="*{email}" id="borrower-email" class="form-input input">
+      </div>
+      <div class="form-group">
+        <label for="borrower-password">Password</label>
+        <input type="password" id="borrower-password" class="form-input input">
+      </div>
+      <div class="form-group">
+        <label for="borrower-password-confirmation">Password Confirmation</label>
+        <input type="password" id="borrower-password-confirmation" class="form-input input">
+      </div>
+      <div class="form-group checkbox-group">
+        <label for="item-enabled"> <input type="checkbox" th:field="*{enabled}" id="item-enabled">Enabled</label>
+      </div>
+      <div class="form-group form-buttons">
+        <button type="submit" class="">Save Changes</button>
+        <input class="cancel-button" type="reset">
+      </div>
+    </form>
+  </div>
+</main>
+</body>
+</html>

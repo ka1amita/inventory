@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/solid.css" th:href="@{/css/solid.css}">
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/fontawesome.css" th:href="@{/css/fontawesome.css}">
+  <title>Item List</title>
+</head>
+<body>
+<header th:replace="~{fragments/header::header}"></header>
+<main>
+  <div class="container">
+    <h1>Items</h1>
+    <div class="search-container">
+      <form th:replace="~{fragments/search::text-search}"></form>
+      <form th:replace="~{fragments/search::date-search}"></form>
+    </div>
+    <table class="list">
+      <thead>
+      <tr>
+        <th><h4>Title</h4></th>
+        <th><h4>Toxic</h4></th>
+        <th><h4>Enabled</h4></th>
+        <th><h4>Created</h4></th>
+        <th><h4>Expires</h4></th>
+        <th><h4>Borrower</h4></th>
+        <th><h4></h4></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${items}" th:object="${item}">
+        <td th:text="*{title}">Title</td>
+        <td><i th:if="${item.toxic}" class="fa-solid fa-exclamation toxic"></i></td>
+        <td><i th:if="${item.enabled}" class="fa-solid fa-check enabled"></i></td>
+        <td th:text="*{#dates.format(creationDate, 'dd MMM yyyy')}">Creation Date</td>
+        <td th:text="*{#dates.format(expirationDate, 'dd MMM yyyy')}">Expiration Date</td>
+        <td>
+          <a th:if="*{borrower}" th:object="${item.borrower}"
+             th:href="@{/item/list/filter-by-borrower-id(id=*{id})}" th:method="get"
+             th:text="*{name}">Borrower</a>
+        </td>
+        <td>
+          <form class="form-group form-buttons">
+            <input type="hidden" th:name="id" th:value="*{id}">
+            <button class="detail-button" type="submit" formaction="listBorrower.html" th:formaction="@{/item}" th:formmethod="get">Detail</button>
+            <button class="delete-button" type="submit" formaction="listBorrower.html" th:formaction="@{/item/delete}" th:formmethod="post">Delete</button>
+            <button class="edit-button" type="submit" formaction="listBorrower.html" th:formaction="@{/item/edit}" th:formmethod="get">Edit</button>
+          </form>
+        </td>
+      </tr>
+      <!--/* static prototype dummy data */-->
+      <!--/* static prototype dummy data */-->
+      </tbody>
+    </table>
+  </div>
+</main>
+<footer th:replace="~{fragments/footer::footer}"></footer>
+</body>
+</html>

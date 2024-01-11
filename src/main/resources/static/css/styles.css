@@ -188,14 +188,15 @@ td:last-child {
   padding-right: 1rem;
 }
 
-.urgent {
+.toxic {
   color: red;
 }
 
-.done {
+.enabled {
   color: green;
 }
 
+.main-navigation,
 .main-footer {
   background-color: white;
 }

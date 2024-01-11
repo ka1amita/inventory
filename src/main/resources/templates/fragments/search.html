@@ -15,19 +15,19 @@
       <form class="search-form"  th:fragment="text-search">
         <label for="search-text">Text</label>
         <input class="search-input input" type="search" name="input" id="search-text"
-               placeholder="Search todos...">
-        <button type="submit" th:formaction="@{/todo/filter-by-title}" th:formmethod="post">By Title
+               placeholder="Search items...">
+        <button type="submit" th:formaction="@{/item/list/filter-by-title}" th:formmethod="post">By Title
         </button>
-        <button type="submit" th:formaction="@{/todo/filter-by-description}" th:formmethod="post"> By Description
+        <button type="submit" th:formaction="@{/item/list/filter-by-description}" th:formmethod="post"> By Description
         </button>
-        <button type="submit" th:formaction="@{/todo/filter-by-assignee-name}" th:formmethod="post">By Assignee's Name
+        <button type="submit" th:formaction="@{/item/list/filter-by-borrower-name}" th:formmethod="post">By Borrower's Name
         </button>
       </form>
       <form class="search-form" th:fragment="date-search">
         <label for="search-date">Dates</label>
         <input class="search-input input" type="date" name="date" id="search-date" value="1989-01-02" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}">
-        <button type="submit" th:formaction="@{/todo/filter-by-creation-date}" th:formmethod="post">By Creation Date</button>
-        <button type="submit" th:formaction="@{/todo/filter-by-due-date}" th:formmethod="post">By Due Date</button>
+        <button type="submit" th:formaction="@{/item/list/filter-by-creation-date}" th:formmethod="post">By Creation Date</button>
+        <button type="submit" th:formaction="@{/item/list/filter-by-due-date}" th:formmethod="post">By Due Date</button>
       </form>
     </div>
   </div>

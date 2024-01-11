@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/solid.css" th:href="@{/css/solid.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/fontawesome.css" th:href="@{/css/fontawesome.css}">
+    <title>Add Item</title>
+</head>
+<body>
+<header th:replace="~{fragments/header::header}"></header>
+<main>
+    <div class="container">
+        <h1>Add Item</h1>
+        <form action="./listItems.html" th:action="@{/item/add}" th:object="${item}" th:method="post" class="edit-form" th:insert="~{fragments/itemForm::item-form}">
+        </form>
+    </div>
+</main>
+<footer th:replace="~{fragments/footer::footer}"></footer>
+</body>
+</html>
