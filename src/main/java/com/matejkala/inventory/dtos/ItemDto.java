@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class ItemDto {
 
-  private final long id;
+  private final Long id;
   private final String title;
   private final String description;
   private final boolean toxic;
@@ -17,7 +17,7 @@ public class ItemDto {
   private final Date expirationDate;
   private final Borrower borrower;
 
-  public ItemDto(long id,
+  public ItemDto(Long id,
       String title,
       String description,
       boolean toxic,
@@ -35,7 +35,7 @@ public class ItemDto {
     this.borrower = borrower;
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 

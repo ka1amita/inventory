@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,7 @@ public class Borrower {
 
   @Id
   @GeneratedValue(strategy = AUTO)
-  private long id;
+  private Long id;
   private String name;
   private String email;
   private boolean enabled;
@@ -29,16 +30,22 @@ public class Borrower {
   }
 
   public Borrower(String name, String email, boolean enabled) {
+    this(0L, name, email, enabled, new ArrayList<>());
+  }
+
+  public Borrower(Long id, String name, String email, boolean enabled, List<Item> items) {
+    this.id = id;
     this.name = name;
     this.email = email;
     this.enabled = enabled;
+    this.items = this.items;
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

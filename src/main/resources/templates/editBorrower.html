@@ -15,7 +15,7 @@
 <main>
   <div class="container">
     <h1>Edit Borrower</h1>
-    <form action="./listBorrowers.html" th:action="@{/borrower/edit}" th:object="${borrower}" th:method="post" class="edit-form" th:insert="fragments/borrowerForm::borrower-form"></form>
+    <form action="./listBorrowers.html" th:action="@{/borrower/edit}" th:object="${borrower}" th:method="post" class="edit-form" th:insert="~{fragments/borrowerForm::borrower-form}"></form>
   </div>
 </main>
 <footer th:replace="~{fragments/footer::footer}"></footer>
